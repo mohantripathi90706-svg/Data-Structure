@@ -6,9 +6,10 @@ struct node
     struct node *next;
 };
 struct node *head, *temp, *newnode;
+
 void display()
 {
-    int n, i, choice;
+    int n, i, choice, pos,count=0;
     printf("Enter the nodes :");
     scanf("%d", &n);
     for (i = 1; i <= n; i++)
@@ -17,6 +18,7 @@ void display()
         printf("Enter the data :");
         scanf("%d", &newnode->data);
         newnode->next = 0;
+        count ++;
 
         if (head == 0)
         {
@@ -30,7 +32,7 @@ void display()
     }
     printf("\n1. Insert at Begining :");
     printf("\n2. Insert at End :");
-    // printf("\n3.Insert at Specified Position :");
+    printf("\n3.Insert at Specified Position :");
     printf("\nEnter the choice :");
     scanf("%d", &choice);
     if (choice == 1)
@@ -49,9 +51,33 @@ void display()
         newnode->next = 0;
         temp = head;
 
-        while (temp->next!= 0)
+        while (temp->next != 0)
         {
             temp = temp->next;
+            temp->next = newnode;
+        }
+    }
+    else if (choice == 3)
+    {
+        newnode = (struct node *)malloc(sizeof(struct node));
+        printf("Enter the position :");
+        scanf("%d", &pos);
+        if (pos > count)
+        {
+            printf("INVALID POSITION");
+            exit(0);
+        }
+        else
+        {
+            temp = head;
+            while (i < pos)
+            {
+                temp = temp->next;
+                i++;
+            }
+            printf("Enter the data :");
+            scanf("%d", &newnode->data);
+            newnode->next = temp->next;
             temp->next = newnode;
         }
     }
