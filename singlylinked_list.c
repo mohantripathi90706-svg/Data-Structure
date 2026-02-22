@@ -9,7 +9,7 @@ struct node *head, *temp, *newnode;
 
 void display()
 {
-    int n, i, choice, pos,count=0;
+    int n, i, choice, pos, count = 0;
     printf("Enter the nodes :");
     scanf("%d", &n);
     for (i = 1; i <= n; i++)
@@ -18,7 +18,7 @@ void display()
         printf("Enter the data :");
         scanf("%d", &newnode->data);
         newnode->next = 0;
-        count ++;
+        count++;
 
         if (head == 0)
         {
