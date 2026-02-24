@@ -54,6 +54,7 @@ int main()
 
     // Linking nodes
     n1->next = n2;
+    
     n2->next = n3;
     n3->next = NULL;
 
