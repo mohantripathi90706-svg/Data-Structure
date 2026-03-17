@@ -10,7 +10,7 @@ struct node
 
 struct node *head = NULL;
 
-// Function to reverse list
+// Function to reverse a list
 void reverse()
 {
     struct node *prev = NULL;
@@ -54,7 +54,7 @@ int main()
 
     // Linking nodes
     n1->next = n2;
-    
+
     n2->next = n3;
     n3->next = NULL;
 
